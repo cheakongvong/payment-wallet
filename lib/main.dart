@@ -1,26 +1,31 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:paymentwallet/Screens/Homescreen.dart';
+import 'package:paymentwallet/Screens/loginScreen.dart';
 
-import 'Screens/Homescreen.dart';
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // FirebaseAuth.instance.signOut();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Payment Wallet',
       theme: ThemeData(
-        fontFamily: 'Inter',
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0x003a42e8)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF21564B)),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: FirebaseAuth.instance.currentUser != null
+          ? HomeScreen()
+          : LoginScreen(),
     );
   }
 }
