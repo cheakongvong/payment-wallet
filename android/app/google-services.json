@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "961498358212",
+    "project_id": "paymentwallet-d39cb",
+    "storage_bucket": "paymentwallet-d39cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961498358212:android:75d454504b330ebcd74491",
+        "android_client_info": {
+          "package_name": "com.example.paymentwallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA1UsVw1pF83vN-gC5bMQu02HkJmoyA8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
